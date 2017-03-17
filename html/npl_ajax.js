@@ -43,9 +43,9 @@ function checkresponse(json) {				// interrupt handler
 	clearInterval(FetchTimer);
 	if (json) {				// responseText defined?
 		var now = new Date();	 		// Receive time
-		if( json.st && json.it ) {
+		if( json.nstt && json.it ) {
 			json.it *= 1000; 			// Initiate time
-			json.st *= 1000; 			// Send time
+			json.st = json.nstt * 1000; 			// Send time
 			json.rt = now.getTime(); 		// Receive time
 			json.rtt = json.rt - json.it;		// Round Trip Time
 			json.dif = json.st - (json.it+json.rt)/2;	// estimated clock difference
@@ -55,6 +55,7 @@ function checkresponse(json) {				// interrupt handler
 		}
 	}
 	calculate();				// calculate offset values
+	log_ntp();				// calculate offset values
 	fetch();				// next server
 }
 
@@ -117,6 +118,22 @@ function calculate() {
 
 	var msgbox = document.getElementById( "Details" );
 	if ( null != msgbox ) msgbox.innerHTML = msg;
+}
+
+function log_ntp() {
+
+	if ( Results.length == 0 ) return;
+
+	$.post("log.php", {
+		user_transmit_time: Results[0].it/1000,
+		user_receive_time: Results[0].rt/1000,
+		ntp_client_transmit_time: Results[0].nctt,
+		ntp_client_receive_time: Results[0].ncrt,
+		ntp_server_transmit_time: Results[0].st/1000,
+		ntp_server_receive_time: Results[0].nsrt
+		}, function(result){
+        $("span").html(result);
+    });
 }
 
 function showtime()

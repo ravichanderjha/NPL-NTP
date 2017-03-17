@@ -36,6 +36,20 @@ void error( char* msg )
 
 int main( int argc, char* argv[ ] )
 {
+	char *it_str = getenv("QUERY_STRING");
+
+	printf("Content-type:application/JSON\n\n\
+		{\n\
+		 \"id\": \"npl-ntp-webserver\",\
+		 \"it\": %s,\
+		",it_str);
+
+	struct timeval currentTime;
+	gettimeofday(&currentTime, NULL);
+	printf("\
+	\"ncrt\": %u.%3d,\
+	", currentTime.tv_sec, currentTime.tv_usec*1000);
+
 	int sockfd, n; // Socket file descriptor and the n return result from writing/reading from the socket.
 	
 	int portno = 123; // NTP UDP port number.
@@ -138,6 +152,9 @@ int main( int argc, char* argv[ ] )
 
 	packet.txTm_s = ntohl( packet.txTm_s ); // Time-stamp seconds.
 	packet.txTm_f = ntohl( packet.txTm_f ); // Time-stamp fraction of a second.
+
+	packet.rxTm_s = ntohl( packet.rxTm_s ); // Time-stamp seconds.
+	packet.rxTm_f = ntohl( packet.rxTm_f ); // Time-stamp fraction of a second.
 	
 	// Extract the 32 bits that represent the time-stamp seconds (since NTP epoch) from when the packet left the server.
 	// Subtract 70 years worth of seconds from the seconds since 1900.
@@ -149,30 +166,27 @@ int main( int argc, char* argv[ ] )
 	
 	// Print the time we got from the server, accounting for local timezone and conversion from UTC time.
 		
-	char *it_str = getenv("QUERY_STRING");
-	uint32_t it_time; 
-	sscanf(it_str, "%ld", &it_time);
 
-	uint32_t txTm = packet.txTm_s - NTP_TIMESTAMP_DELTA ; 
+	uint32_t nstt_txTm = packet.txTm_s - NTP_TIMESTAMP_DELTA ; 
+	uint32_t nsrt_rxTm = packet.rxTm_s - NTP_TIMESTAMP_DELTA ; 
 
 	uint32_t time_f =  ( (packet.txTm_f >> 9) & 0x007fffff) | 0x3f800000;
 
 	float *time_ptr = (float*) &time_f;
 
-	int st = (int) ((float)(*time_ptr - 1) * 1000);
+	int nstt_frac = (int) ((float)(*time_ptr - 1) * 1000000);
 
+	time_f =  ( (packet.rxTm_f >> 9) & 0x007fffff) | 0x3f800000;
+	time_ptr = (float*) &time_f;
+	int nsrt_frac = (int) ((float)(*time_ptr - 1) * 1000000);
 
-	struct timeval currentTime;
 	gettimeofday(&currentTime, NULL);
-
-	printf("Content-type:application/JSON\n\n\
-		{\n\
- \"id\": \"npl-ntp-webserver\",\
- \"it\": %s,\
- \"tt\": %u.%3d,\
- \"st\": %u.%3d\
-}\
-",it_str, currentTime.tv_sec, currentTime.tv_usec*1000, txTm, st);
+	printf("\
+	 \"nctt\": %u.%3d,\
+	 \"nsrt\": %u.%3d,\
+	 \"nstt\": %u.%3d\
+	}\
+	", currentTime.tv_sec, currentTime.tv_usec*1000, nsrt_rxTm, nsrt_frac, nstt_txTm, nstt_frac);
 
 	return 0;
 }
