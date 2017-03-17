@@ -124,7 +124,7 @@ function log_ntp() {
 
 	if ( Results.length == 0 ) return;
 
-	$.post("log.php", {
+	$.post("insert_log.php", {
 		user_transmit_time: Results[0].it/1000,
 		user_receive_time: Results[0].rt/1000,
 		ntp_client_transmit_time: Results[0].nctt,
