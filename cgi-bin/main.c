@@ -54,7 +54,7 @@ int main( int argc, char* argv[ ] )
 	
 	int portno = 123; // NTP UDP port number.
 	
-	char* host_name = "time.nplindia.org"; // NTP server host-name.
+	char* host_name = "14.139.60.107"; // NTP server host-name.
 	
 	// Structure that defines the 48 byte NTP packet protocol.
 	

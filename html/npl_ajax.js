@@ -15,10 +15,20 @@ var TimeOut  = 3000;		// http timeout is 3 seconds
 var Status   = 0;		// 1: 1 server only, 2: accurate
 var Results  = new Array();
 
+
+//	LoopTimer = setInterval("", logInterval*60*1000);
+
+function log_nettime() {
+	ServerList = ["cgi-bin/ntp_client"];
+	Status = 0;
+	startclock();
+}
+
 function startclock() {
 	LoopTimer = setInterval("showtime()", Interval);
 	fetch();
 }
+
 
 function stopclock() {
 	if ( LoopTimer ) clearInterval(LoopTimer);
