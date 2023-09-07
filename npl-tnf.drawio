@@ -1,9 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2023-09-06T08:20:36.374Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" version="21.7.2" etag="fWYvi_S00hy2v4GfYxKA" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-07T04:02:41.233Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="AqiO0mUAEWMRPEuyfZlB" version="21.7.2" type="github">
   <diagram name="Page-1" id="6f6-rWWsNm-6pzQ9wwHi">
-    <mxGraphModel>
+    <mxGraphModel dx="806" dy="459" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G9uuK2h5MZgT2fO1i17R-2" target="G9uuK2h5MZgT2fO1i17R-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-2" value="User Send Data Utility" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G9uuK2h5MZgT2fO1i17R-3" target="G9uuK2h5MZgT2fO1i17R-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="G9uuK2h5MZgT2fO1i17R-3" target="G9uuK2h5MZgT2fO1i17R-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-3" value="Server" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-4" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="160" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-5" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="290" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="G9uuK2h5MZgT2fO1i17R-10" value="Each 16 Minute" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="290" y="170" width="110" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
