@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-14T06:22:14.107Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="HHKyjGwGqUH9Mns0XEz7" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-14T06:22:31.732Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="axwM-0A-AqlP2sVIB-0H" version="22.0.4" type="github">
   <diagram name="Page-1" id="6f6-rWWsNm-6pzQ9wwHi">
     <mxGraphModel dx="806" dy="459" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -15,9 +15,6 @@
               <mxPoint x="220" y="99" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="6lrkJMeUSA5-O_FbXI_s-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="6lrkJMeUSA5-O_FbXI_s-7" source="6lrkJMeUSA5-O_FbXI_s-2" target="6lrkJMeUSA5-O_FbXI_s-21">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="6lrkJMeUSA5-O_FbXI_s-2" value="GNSS/NaVic" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.satellite_dish;" vertex="1" parent="6lrkJMeUSA5-O_FbXI_s-7">
           <mxGeometry x="210" y="10" width="50" height="50" as="geometry" />
